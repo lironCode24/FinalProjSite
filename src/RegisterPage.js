@@ -1,5 +1,5 @@
-// RegisterPage.js
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Import Link component
 import './RegisterPage.css'; // Import CSS file for styling
 
 const RegisterPage = () => {
@@ -31,6 +31,8 @@ const RegisterPage = () => {
         setError('');
         // Reset form fields
         setFormData({ username: '', email: '', password: '' });
+        // Navigate to login page
+        window.location.href = '/login'; // This will navigate to the login page
     };
 
     return (
@@ -62,6 +64,8 @@ const RegisterPage = () => {
                 />
                 <button type="submit">Register</button>
             </form>
+            {/* Add Link component for back to login button */}
+            <Link to="/login" className="back-to-login">Back to Login</Link>
         </div>
     );
 };

@@ -1,0 +1,2 @@
+C:\Users\liron\source\repos\my-react-app\obj\x86\Debug\final_project.csproj.AssemblyReference.cache
+C:\Users\liron\source\repos\my-react-app\obj\x86\Debug\final_project.csproj.CoreCompileInputs.cache

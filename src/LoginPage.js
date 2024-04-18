@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Import Link component
 import './LoginPage.css'; // Import CSS file for styling
 import logo from './logo-haifa.jpg'; // Import the image file with the correct path
 
-const LoginPage = ({ onLogin }) => {
+const LoginPage = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+
+    const onLogin = () => {
+        window.location.href = '/analysis'; // This will navigate to the analysis page
+    };
 
     const handleLogin = () => {
         // Validate username and password (you can add more robust validation)
@@ -40,6 +45,8 @@ const LoginPage = ({ onLogin }) => {
                 />
             </div>
             <button className="login-btn" onClick={handleLogin}>Login</button>
+            {/* Add Link component for register button */}
+            <Link to="/register" className="register-link">Sign in</Link>
         </div>
     );
 };

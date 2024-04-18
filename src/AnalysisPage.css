@@ -1,0 +1,80 @@
+/* AnalysisPage.css */
+
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.text-area {
+    width: 100%;
+    max-width: 800px;
+    height: 200px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none; /* Prevent textarea from being resized */
+    font-size: 16px; /* Set font size for better readability */
+}
+
+.analyze-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 20px; /* Add margin below the analyze button */
+}
+
+    .analyze-btn:hover {
+        background-color: #0056b3;
+    }
+
+.result-container {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+    .result-container p {
+        margin-bottom: 10px;
+        font-size: 16px; /* Set font size for better readability */
+    }
+
+    .result-container h2 {
+        margin-bottom: 10px;
+        color: #007bff; /* Change color to match the button color */
+    }
+
+.profile-link {
+    position: fixed; /* Position the button fixed to the top right corner */
+    top: 20px;
+    right: 100px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline from the link */
+    transition: background-color 0.3s;
+}
+
+    .profile-link:hover {
+        background-color: #0056b3;
+    }

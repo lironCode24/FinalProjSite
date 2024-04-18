@@ -1,5 +1,7 @@
-// UserProfilePage.js
 import React from 'react';
+import { Link } from 'react-router-dom';
+import './UserProfilePage.css';
+import profileIcon from './profileIcon.jpg';
 
 const UserProfilePage = () => {
     // Static user details (replace with dynamic data from state or props if available)
@@ -11,12 +13,15 @@ const UserProfilePage = () => {
 
     return (
         <div className="user-profile-container">
-            <h2>User Profile</h2>
+            <div className="profile-header">
+                <img src={profileIcon} alt="Profile" className="profile-image" />
+                <h2 className="profile-name">{user.name}</h2>
+            </div>
             <div className="user-details">
-                <p><strong>Name:</strong> {user.name}</p>
                 <p><strong>Email:</strong> {user.email}</p>
                 <p><strong>Role:</strong> {user.role}</p>
             </div>
+            <Link to="/" className="back-to-analyze-btn">Back to Analyze</Link>
         </div>
     );
 };

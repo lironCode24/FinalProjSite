@@ -3,28 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\liron\\source\\repos\\my-react-app\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{964F53EE-C150-4A62-8A2A-ED4E9384E0C2}|final_project.csproj|c:\\users\\liron\\source\\repos\\my-react-app\\src\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{964F53EE-C150-4A62-8A2A-ED4E9384E0C2}|final_project.csproj|solutionrelative:src\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{964F53EE-C150-4A62-8A2A-ED4E9384E0C2}|final_project.csproj|C:\\Users\\liron\\source\\repos\\my-react-app\\src\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{964F53EE-C150-4A62-8A2A-ED4E9384E0C2}|final_project.csproj|solutionrelative:src\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{964F53EE-C150-4A62-8A2A-ED4E9384E0C2}|final_project.csproj|c:\\users\\liron\\source\\repos\\my-react-app\\src\\userprofilepage.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{964F53EE-C150-4A62-8A2A-ED4E9384E0C2}|final_project.csproj|solutionrelative:src\\userprofilepage.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{964F53EE-C150-4A62-8A2A-ED4E9384E0C2}|final_project.csproj|c:\\users\\liron\\source\\repos\\my-react-app\\src\\registerpage.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{964F53EE-C150-4A62-8A2A-ED4E9384E0C2}|final_project.csproj|solutionrelative:src\\registerpage.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{964F53EE-C150-4A62-8A2A-ED4E9384E0C2}|final_project.csproj|c:\\users\\liron\\source\\repos\\my-react-app\\src\\registerpage.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{964F53EE-C150-4A62-8A2A-ED4E9384E0C2}|final_project.csproj|solutionrelative:src\\registerpage.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{964F53EE-C150-4A62-8A2A-ED4E9384E0C2}|final_project.csproj|c:\\users\\liron\\source\\repos\\my-react-app\\src\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{964F53EE-C150-4A62-8A2A-ED4E9384E0C2}|final_project.csproj|solutionrelative:src\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\liron\\AppData\\Local\\Microsoft\\TypeScript\\5.2\\node_modules\\@types\\react\\index.d.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,84 +13,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserProfilePage.js",
-              "DocumentMoniker": "C:\\Users\\liron\\source\\repos\\my-react-app\\src\\UserProfilePage.js",
-              "RelativeDocumentMoniker": "src\\UserProfilePage.js",
-              "ToolTip": "C:\\Users\\liron\\source\\repos\\my-react-app\\src\\UserProfilePage.js",
-              "RelativeToolTip": "src\\UserProfilePage.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-04-15T16:28:45.289Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RegisterPage.css",
-              "DocumentMoniker": "C:\\Users\\liron\\source\\repos\\my-react-app\\src\\RegisterPage.css",
-              "RelativeDocumentMoniker": "src\\RegisterPage.css",
-              "ToolTip": "C:\\Users\\liron\\source\\repos\\my-react-app\\src\\RegisterPage.css",
-              "RelativeToolTip": "src\\RegisterPage.css",
-              "ViewState": "AQIAABkAAAAAAAAAAAAUwDIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-04-15T16:23:43.558Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "index.js",
-              "DocumentMoniker": "C:\\Users\\liron\\source\\repos\\my-react-app\\src\\index.js",
-              "RelativeDocumentMoniker": "src\\index.js",
-              "ToolTip": "C:\\Users\\liron\\source\\repos\\my-react-app\\src\\index.js",
-              "RelativeToolTip": "src\\index.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-04-15T16:21:15.827Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "App.js",
-              "DocumentMoniker": "C:\\Users\\liron\\source\\repos\\my-react-app\\src\\App.js",
-              "RelativeDocumentMoniker": "src\\App.js",
-              "ToolTip": "C:\\Users\\liron\\source\\repos\\my-react-app\\src\\App.js",
-              "RelativeToolTip": "src\\App.js",
-              "ViewState": "AQIAACcAAAAAAAAAAAAQwEUAAABOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-04-15T10:04:41.605Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RegisterPage.js",
-              "DocumentMoniker": "C:\\Users\\liron\\source\\repos\\my-react-app\\src\\RegisterPage.js",
-              "RelativeDocumentMoniker": "src\\RegisterPage.js",
-              "ToolTip": "C:\\Users\\liron\\source\\repos\\my-react-app\\src\\RegisterPage.js",
-              "RelativeToolTip": "src\\RegisterPage.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-04-15T16:15:52.237Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "App.css",
-              "DocumentMoniker": "C:\\Users\\liron\\source\\repos\\my-react-app\\src\\App.css",
-              "RelativeDocumentMoniker": "src\\App.css",
-              "ToolTip": "C:\\Users\\liron\\source\\repos\\my-react-app\\src\\App.css",
-              "RelativeToolTip": "src\\App.css",
-              "ViewState": "AQIAABgAAAAAAAAAAAAUwDQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-04-15T15:51:55.218Z",
+              "Title": "index.d.ts",
+              "DocumentMoniker": "C:\\Users\\liron\\AppData\\Local\\Microsoft\\TypeScript\\5.2\\node_modules\\@types\\react\\index.d.ts",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Microsoft\\TypeScript\\5.2\\node_modules\\@types\\react\\index.d.ts",
+              "ToolTip": "C:\\Users\\liron\\AppData\\Local\\Microsoft\\TypeScript\\5.2\\node_modules\\@types\\react\\index.d.ts",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Microsoft\\TypeScript\\5.2\\node_modules\\@types\\react\\index.d.ts",
+              "ViewState": "AQIAAJcQAAAAAAAAAAAvwKYQAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-04-18T09:38:13.908Z",
               "EditorCaption": ""
             }
           ]

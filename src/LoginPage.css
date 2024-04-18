@@ -1,10 +1,17 @@
-﻿.login-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 30px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+﻿
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.login-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
 }
 
 .input-field {
@@ -20,8 +27,8 @@
     margin-bottom: 15px;
 }
 
+/* Login button */
 .login-btn {
-    width: 100%;
     padding: 10px;
     background-color: #007bff;
     color: #fff;
@@ -29,11 +36,30 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    font-size: 16px; /* Set font size for login button */
 }
 
-.login-btn:hover {
-    background-color: #0056b3;
+    .login-btn:hover {
+        background-color: #0056b3;
+    }
+
+/* Register button */
+.register-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px; /* Add margin to separate from other elements */
+    text-decoration: none;
+    color: #007bff; /* Button color */
+    transition: color 0.3s; /* Smooth transition for color change */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px; /* Set font size for register button */
 }
+
+    .register-link:hover {
+        color: #0056b3; /* Darker color on hover */
+    }
 
 .logo {
     width: 100px; /* Adjust the width as needed */

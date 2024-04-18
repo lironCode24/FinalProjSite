@@ -1,26 +1,37 @@
 /* RegisterPage.css */
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .register-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+.register-content {
+    width: 90%; /* Adjust the width as needed */
     max-width: 400px;
-    margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
 }
 
-    .register-container h2 {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-.error-message {
-    color: red;
-    margin-bottom: 10px;
+.register-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
+.error-message,
 .success-message {
-    color: green;
     margin-bottom: 10px;
 }
 
@@ -29,11 +40,18 @@
 .register-container input[type="password"],
 .register-container button[type="submit"] {
     width: 100%;
+}
+.register-container input[type="text"],
+.register-container input[type="email"],
+.register-container input[type="password"],
+.register-container button[type="submit"],
+.register-container .back-to-login {
     margin-bottom: 10px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
+    font-size: 16px; /* Set font size for consistency */
 }
 
 .register-container button[type="submit"] {
@@ -47,4 +65,15 @@
 
     .register-container button[type="submit"]:hover {
         background-color: #0056b3;
+    }
+
+.back-to-login {
+    background-color: #dc3545; /* Red color */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .back-to-login:hover {
+        background-color: #c82333; /* Darker red on hover */
     }

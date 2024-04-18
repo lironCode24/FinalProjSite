@@ -25340,6 +25340,8 @@
     <Content Include="public\logo192.png" />
     <Content Include="public\logo512.png" />
     <Content Include="public\robots.txt" />
+    <Content Include="src\AnalysisPage.css" />
+    <Content Include="src\AnalysisPage.js" />
     <Content Include="src\App.css" />
     <Content Include="src\App.js" />
     <Content Include="src\App.test.js" />
@@ -25351,6 +25353,7 @@
     <Content Include="src\RegisterPage.js" />
     <Content Include="src\reportWebVitals.js" />
     <Content Include="src\setupTests.js" />
+    <Content Include="src\UserProfilePage.css" />
     <Content Include="src\UserProfilePage.js" />
   </ItemGroup>
   <ItemGroup>
