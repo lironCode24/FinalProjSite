@@ -21,7 +21,7 @@ const UserProfilePage = () => {
                 <p><strong>Email:</strong> {user.email}</p>
                 <p><strong>Role:</strong> {user.role}</p>
             </div>
-            <Link to="/" className="back-to-analyze-btn">Back to Analyze</Link>
+            <Link to="/analysis" className="back-to-analyze-btn">Back to Analyze</Link>
         </div>
     );
 };

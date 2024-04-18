@@ -34,7 +34,12 @@ body {
 .success-message {
     margin-bottom: 10px;
 }
-
+.error-message {
+    color: #c82333;
+}
+.success-message {
+    color: green;
+}
 .register-container input[type="text"],
 .register-container input[type="email"],
 .register-container input[type="password"],

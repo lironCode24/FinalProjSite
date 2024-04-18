@@ -32,7 +32,10 @@ const RegisterPage = () => {
         // Reset form fields
         setFormData({ username: '', email: '', password: '' });
         // Navigate to login page
-        window.location.href = '/login'; // This will navigate to the login page
+        setTimeout(() => {
+            window.location.href = '/login'; // This will navigate to the login page
+
+        }, 1000);
     };
 
     return (
