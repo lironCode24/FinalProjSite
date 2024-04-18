@@ -1,7 +1,6 @@
 /* AnalysisPage.css */
 
-
-.container {
+.main-container {
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -14,6 +13,17 @@
 body {
     margin: 0;
     padding: 0;
+}
+
+.logo-container {
+    position: absolute; /* Position the button absolute to the main container */
+    top: 20px;
+    right: 30px; /* Adjust right position as needed */
+    margin-bottom: 20px; /* Add margin to separate logo from other elements */
+}
+
+.logo {
+    width: 200px; /* Adjust the width as needed */
 }
 
 .text-area {
@@ -45,7 +55,6 @@ body {
     }
 
 .result-container {
-    margin-top: 20px;
     width: 100%;
     max-width: 800px;
 }
@@ -61,9 +70,10 @@ body {
     }
 
 .profile-link {
-    position: fixed; /* Position the button fixed to the top right corner */
-    top: 20px;
-    right: 100px;
+    position: absolute; /* Position the button absolute to the main container */
+    top: 30px;
+    right: 900px; /* Adjust right position as needed */
+    margin-bottom: 10px; /* Adjust margin bottom */
     padding: 10px 20px;
     font-size: 16px;
     background-color: #007bff;
@@ -78,3 +88,8 @@ body {
     .profile-link:hover {
         background-color: #0056b3;
     }
+
+h1 {
+    position: fixed;
+    top: 90px;
+}

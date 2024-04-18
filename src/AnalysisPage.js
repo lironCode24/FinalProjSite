@@ -1,6 +1,9 @@
+/* AnalysisPage.js */
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './AnalysisPage.css';
+import logo from './logo-haifa.jpg'; // Import the image file with the correct path
 
 const AnalysisPage = () => {
     const [inputText, setInputText] = useState('');
@@ -22,12 +25,22 @@ const AnalysisPage = () => {
         return `${day}-${month}-${year} ${hour}:${minute}:${second}`;
     };
 
+    const createText = (text, maxLength) => {
+        
+        let word = ' blah';
+        for (var i = 0; i < maxLength; i++) {
+            text += word;
+        }
+           
+        return text;
+    };
+
     const handleSubmit = async () => {
         try {
             setIsLoading(true); // Set loading state to true while waiting for the response
             // Simulate processing for 1 second
             setTimeout(() => {
-                setAnalysisResult('Your result is blah blah'); // Set analysis result to 'Your result is blah blah'
+                setAnalysisResult(createText('Your result is ', 50)); // Set analysis result to truncated text
                 setIsLoading(false); // Reset loading state after setting the result
             }, 1000);
         } catch (error) {
@@ -37,7 +50,11 @@ const AnalysisPage = () => {
     };
 
     return (
-        <div className="analysis-container">
+        <div className="main-container"> {/* Changed class name to main-container */}
+            <div className="logo-container">
+                <img src={logo} alt="Logo" className="logo" />
+            </div>
+            <Link to="/profile" className="profile-link">View Profile</Link>
             <h1>NLP Analysis Tool</h1>
             <textarea
                 className="text-area"
@@ -52,14 +69,11 @@ const AnalysisPage = () => {
             </button>
             {analysisResult && (
                 <div className="result-container">
-
                     <p>{getCurrentDateTime()}</p>
                     <h2>Analysis Result</h2>
-
                     <p>{analysisResult}</p>
                 </div>
             )}
-            <Link to="/profile" className="profile-link">View Profile</Link>
         </div>
     );
 };

@@ -34,23 +34,20 @@ body {
 .success-message {
     margin-bottom: 10px;
 }
+
 .error-message {
     color: #c82333;
 }
+
 .success-message {
     color: green;
 }
+
 .register-container input[type="text"],
 .register-container input[type="email"],
 .register-container input[type="password"],
 .register-container button[type="submit"] {
     width: 100%;
-}
-.register-container input[type="text"],
-.register-container input[type="email"],
-.register-container input[type="password"],
-.register-container button[type="submit"],
-.register-container .back-to-login {
     margin-bottom: 10px;
     padding: 10px;
     border: 1px solid #ccc;
@@ -77,8 +74,10 @@ body {
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s;
+    text-decoration: none; /* Remove underline from the link */
+    margin-bottom: 10px; /* Add margin below the button */
+    margin-left: 85px; /* Add margin below the button */
+    padding: 8px 16px; /* Adjust padding for smaller button */
+    border-radius: 5px;
+    align-self: flex-start; /* Align button to the start of the container */
 }
-
-    .back-to-login:hover {
-        background-color: #c82333; /* Darker red on hover */
-    }

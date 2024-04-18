@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; // Import Link component
 import './RegisterPage.css'; // Import CSS file for styling
+import logo from './logo-haifa.jpg'; // Import the image file with the correct path
 
 const RegisterPage = () => {
     const [formData, setFormData] = useState({
+        fullname:'',
         username: '',
         email: '',
         password: '',
@@ -19,7 +21,7 @@ const RegisterPage = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Perform form validation
-        if (!formData.username || !formData.email || !formData.password) {
+        if (!formData.username || !formData.fullname || !formData.email || !formData.password) {
             setError('All fields are required');
             setSuccessMessage('');
             return;
@@ -30,7 +32,7 @@ const RegisterPage = () => {
         setSuccessMessage('Registration successful!');
         setError('');
         // Reset form fields
-        setFormData({ username: '', email: '', password: '' });
+        setFormData({ fullname:'', username: '', email: '', password: '' });
         // Navigate to login page
         setTimeout(() => {
             window.location.href = '/login'; // This will navigate to the login page
@@ -40,10 +42,20 @@ const RegisterPage = () => {
 
     return (
         <div className="register-container">
+            <div className="logo-container">
+                <img src={logo} alt="Logo" className="logo" />
+            </div>
             <h2>Register</h2>
             {error && <p className="error-message">{error}</p>}
             {successMessage && <p className="success-message">{successMessage}</p>}
             <form onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    name="fullname"
+                    value={formData.fullname}
+                    onChange={handleChange}
+                    placeholder="Full Name"
+                />
                 <input
                     type="text"
                     name="username"
