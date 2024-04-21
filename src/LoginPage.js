@@ -8,16 +8,31 @@ const LoginPage = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
-    const onLogin = () => {
-        window.location.href = '/analysis'; // This will navigate to the analysis page
-    };
+    const handleLogin = async () => {
+        try {
+            // Send a request to your backend server to authenticate the user
+            const response = await fetch('http://localhost:3001/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, password }),
+            });
 
-    const handleLogin = () => {
-        // Validate username and password (you can add more robust validation)
-        if (username === 'liron' && password === 'liron123') {
-            onLogin(); // Call the onLogin function passed from the parent component
-        } else {
-            setError('Invalid username or password');
+            if (response.ok) {
+                // User authenticated successfully
+                const data = await response.json();
+                const accessToken = data.accessToken;
+                localStorage.setItem('accessToken', accessToken); // Store the access token in local storage
+
+                window.location.href = '/analysis'; // Navigate to the analysis page
+            } else {
+                // Authentication failed
+                setError('Invalid username or password');
+            }
+        } catch (error) {
+            console.error('Error during login:', error);
+            setError('Failed to login. Please try again later.');
         }
     };
 

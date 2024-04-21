@@ -46,6 +46,7 @@ body {
 .register-container input[type="text"],
 .register-container input[type="email"],
 .register-container input[type="password"],
+.register-container input[type="role"],
 .register-container button[type="submit"] {
     width: 100%;
     margin-bottom: 10px;
@@ -81,3 +82,27 @@ body {
     border-radius: 5px;
     align-self: flex-start; /* Align button to the start of the container */
 }
+
+.register-container select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px; /* Set font size for consistency */
+}
+
+    /* Style for the select options */
+    .register-container select option {
+        padding: 10px;
+        font-size: 16px;
+        background-color: #fff; /* Background color */
+        color: #333; /* Text color */
+    }
+
+    /* Style for the select when it's focused */
+    .register-container select:focus {
+        outline: none; /* Remove default focus outline */
+        border-color: #007bff; /* Change border color */
+    }

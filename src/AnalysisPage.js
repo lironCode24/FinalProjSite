@@ -1,5 +1,3 @@
-/* AnalysisPage.js */
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './AnalysisPage.css';
@@ -26,12 +24,10 @@ const AnalysisPage = () => {
     };
 
     const createText = (text, maxLength) => {
-        
         let word = ' blah';
         for (var i = 0; i < maxLength; i++) {
             text += word;
         }
-           
         return text;
     };
 
@@ -46,6 +42,35 @@ const AnalysisPage = () => {
         } catch (error) {
             console.error('Error analyzing text:', error);
             setIsLoading(false); // Reset loading state in case of error
+        }
+    };
+
+    const handleLogout = async () => {
+        try {
+            const accessToken = localStorage.getItem('accessToken');
+            if (!accessToken) {
+                console.error('Access token not found');
+                return;
+            }
+
+            // Send a request to update the access token to null in the backend
+            const response = await fetch('http://localhost:3001/logout', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ accessToken }),
+            });
+
+            if (response.ok) {
+                // Update the access token in the local storage
+                localStorage.removeItem('accessToken');
+                window.location.href = '/login'; // Navigate to the login page
+            } else {
+                console.error('Logout failed');
+            }
+        } catch (error) {
+            console.error('Error during logout:', error);
         }
     };
 
@@ -74,6 +99,7 @@ const AnalysisPage = () => {
                     <p>{analysisResult}</p>
                 </div>
             )}
+            <button className="logout-btn" onClick={handleLogout}>Logout</button>
         </div>
     );
 };

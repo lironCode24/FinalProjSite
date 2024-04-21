@@ -46,6 +46,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Content Include="backend\index.js" />
+    <Content Include="backend\merchantModel.js" />
     <Content Include="node_modules\%40aashutoshrathi\word-wrap\index.js" />
     <Content Include="node_modules\%40adobe\css-tools\dist\index.cjs" />
     <Content Include="node_modules\%40adobe\css-tools\dist\index.mjs" />

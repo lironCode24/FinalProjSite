@@ -1,8 +1,3 @@
-INSERT INTO Users (Username, Email, Role, PasswordHash)
-VALUES 
-    ('liron', 'liron@example.com', 'admin', 'hashed_password_123'),
-    ('jane_doe', 'jane@example.com', 'user', 'hashed_password_456'),
-    ('alice_smith', 'alice@example.com', 'user', 'hashed_password_789');
 
 INSERT INTO TextData (RawText, UserID)
 VALUES

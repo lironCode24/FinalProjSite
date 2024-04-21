@@ -5,7 +5,8 @@ CREATE TABLE Users (
 	fullName VARCHAR(255) NOT NULL,
     Email VARCHAR(255) NOT NULL,
     Role VARCHAR(50) NOT NULL,
-    PasswordHash VARCHAR(255) NOT NULL,
+    PasswordHash VARCHAR(255) NOT NULL,    
+	access_token VARCHAR(255),
     CONSTRAINT unique_username UNIQUE (Username),
     CONSTRAINT unique_email UNIQUE (Email)
 );
@@ -28,5 +29,3 @@ CREATE TABLE Predictions (
     PredictionTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (TextID) REFERENCES TextData(TextID)
 );
-
-

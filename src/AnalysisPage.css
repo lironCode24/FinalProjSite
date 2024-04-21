@@ -38,6 +38,23 @@ body {
     font-size: 16px; /* Set font size for better readability */
 }
 
+.logout-btn {
+    position: absolute; /* Position the button absolute to the main container */
+    top: 30px;
+    right: 550px; /* Adjust right position as needed */
+    margin-bottom: 10px; /* Adjust margin bottom */
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: red;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline from the link */
+    transition: background-color 0.3s;
+}
+
+
 .analyze-btn {
     padding: 10px 20px;
     font-size: 16px;
