@@ -10,6 +10,7 @@
     background-color: #f0f0f0;
 }
 
+
 body {
     margin: 0;
     padding: 0;
@@ -53,7 +54,6 @@ body {
     text-decoration: none; /* Remove underline from the link */
     transition: background-color 0.3s;
 }
-
 
 .analyze-btn {
     padding: 10px 20px;

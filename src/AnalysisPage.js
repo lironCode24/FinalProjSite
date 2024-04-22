@@ -7,6 +7,7 @@ const AnalysisPage = () => {
     const [inputText, setInputText] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [analysisResult, setAnalysisResult] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleInputChange = (event) => {
         setInputText(event.target.value);
@@ -23,27 +24,45 @@ const AnalysisPage = () => {
         return `${day}-${month}-${year} ${hour}:${minute}:${second}`;
     };
 
-    const createText = (text, maxLength) => {
-        let word = ' blah';
-        for (var i = 0; i < maxLength; i++) {
-            text += word;
-        }
-        return text;
-    };
-
     const handleSubmit = async () => {
         try {
-            setIsLoading(true); // Set loading state to true while waiting for the response
-            // Simulate processing for 1 second
-            setTimeout(() => {
-                setAnalysisResult(createText('Your result is ', 50)); // Set analysis result to truncated text
-                setIsLoading(false); // Reset loading state after setting the result
-            }, 1000);
+
+            setAnalysisResult("");
+            // Check if input text is empty
+            if (inputText.trim() === '') {
+                setErrorMessage('Input text cannot be empty');
+                return;
+            } else {
+                setErrorMessage('');
+            }
+
+            setIsLoading(true);
+
+            const response = await fetch('http://127.0.0.1:5000/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ text: inputText }),
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+                setAnalysisResult(result.prediction);
+            } else {
+
+                setErrorMessage('Failed to analyze text. Please try again later');
+                console.error('Failed to analyze text');
+            }
+
+            setIsLoading(false);
         } catch (error) {
+            setErrorMessage('Failed to analyze text. Please try again later');
             console.error('Error analyzing text:', error);
-            setIsLoading(false); // Reset loading state in case of error
+            setIsLoading(false);
         }
     };
+
 
     const handleLogout = async () => {
         try {
@@ -81,6 +100,8 @@ const AnalysisPage = () => {
             </div>
             <Link to="/profile" className="profile-link">View Profile</Link>
             <h1>NLP Analysis Tool</h1>
+
+            {errorMessage && <p className="error-message">{errorMessage}</p>}
             <textarea
                 className="text-area"
                 value={inputText}

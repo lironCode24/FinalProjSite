@@ -56,7 +56,14 @@ body {
     box-sizing: border-box;
     font-size: 16px; /* Set font size for consistency */
 }
-
+.passwordFormat {
+    font-size: 14px; /* Set font size for consistency */
+    display: none; /* Initially hide the password format requirement */
+    color: #c82333;
+}
+#password:hover + .passwordFormat {
+    display: inline-block; /* Display the password format requirement when hovering over the password field */
+}
 .register-container button[type="submit"] {
     background-color: #007bff;
     color: #fff;

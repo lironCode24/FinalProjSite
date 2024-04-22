@@ -54,6 +54,7 @@ const RegisterPage = () => {
     };
 
     async function formValidation(formData) {
+        setError('');
         try {
             // Validate if all fields are provided
             if (!formData.username || !formData.fullname || !formData.email || !formData.password || !formData.role) {
@@ -204,6 +205,7 @@ const RegisterPage = () => {
                     onChange={handleChange}
                     placeholder="Enter your password"
                 />
+                <i className="passwordFormat">Password must include at least one uppercase, one lowercase, one digit, and be 8+ characters long.</i>
                 <button type="submit">Register</button>
             </form>
 
