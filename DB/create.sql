@@ -24,7 +24,6 @@ CREATE TABLE TextData (
 CREATE TABLE Predictions (
     PredictionID SERIAL PRIMARY KEY,
     TextID INT,
-    AccuracyLevel FLOAT NOT NULL,
     PredictionResult VARCHAR(255) NOT NULL,
     PredictionTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (TextID) REFERENCES TextData(TextID)

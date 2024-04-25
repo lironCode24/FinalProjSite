@@ -49,6 +49,13 @@ const AnalysisPage = () => {
             if (response.ok) {
                 const result = await response.json();
                 setAnalysisResult(result.prediction);
+
+                // Insert the analyzed text into the TextData table
+                const textID = await insertTextData(inputText);
+
+                // Insert prediction data into the Predictions table
+                await insertPredictionData(textID, result.prediction);
+
             } else {
 
                 setErrorMessage('Failed to analyze text. Please try again later');
@@ -63,6 +70,47 @@ const AnalysisPage = () => {
         }
     };
 
+    const insertTextData = async (text) => {
+        try {
+            const response = await fetch('http://localhost:3001/insertTextData', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ text }),
+            });
+
+            if (!response.ok) {
+                console.error('Failed to insert text data');
+                return null;
+            }
+
+            const data = await response.json();
+            return data.textID; // Return the inserted TextID
+        } catch (error) {
+            console.error('Error inserting text data:', error);
+            return null;
+        }
+    };
+
+    const insertPredictionData = async (textID, predictionResult) => {
+        try {
+
+            const response = await fetch('http://localhost:3001/insertPredictionData', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ textID, predictionResult }),
+            });
+
+            if (!response.ok) {
+                console.error('Failed to insert prediction data');
+            }
+        } catch (error) {
+            console.error('Error inserting prediction data:', error);
+        }
+    };
 
     const handleLogout = async () => {
         try {

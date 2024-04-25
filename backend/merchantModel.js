@@ -198,6 +198,31 @@ const getUserProfile = async (accessToken, res) => {
 };
 
 
+const insertTextData = async (rawText, userID) => {
+    try {
+        const query = 'INSERT INTO TextData (RawText, UserID) VALUES ($1, $2) RETURNING TextID';
+        const values = [rawText, userID];
+        const result = await pool.query(query, values);
+        return result.rows[0].textid;
+    } catch (error) {
+        console.error('Error inserting text data:', error);
+        throw new Error('Error inserting text data');
+    }
+};
+
+const insertPredictionData = async (textID, predictionResult) => {
+    try {
+        // Generate a random predictionid between 1 and 9999
+        const predictionid = Math.floor(Math.random() * 9999) + 1;
+        const query = 'INSERT INTO public.predictions(predictionid, textid, predictionresult) VALUES ($1, $2, $3)';
+        const values = [predictionid,textID, predictionResult];
+        await pool.query(query, values);
+    } catch (error) {
+        console.error('Error inserting prediction data:', error);
+        throw new Error('Error inserting prediction data');
+    }
+};
+
 module.exports = {
     getPredictions,
     createUser,
@@ -205,6 +230,8 @@ module.exports = {
     getUsersByUsername,
     getUsersByEmail,
     getUserProfile,
-    deleteUserToken
+    deleteUserToken,
+    insertTextData,
+    insertPredictionData
 };
 

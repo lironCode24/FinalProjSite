@@ -100,6 +100,30 @@ app.post('/logout', async (req, res) => {
     }
 });
 
+// Route for inserting text data into TextData table
+app.post('/insertTextData', async (req, res) => {
+    try {
+        const { text } = req.body;
+        const textID = await merchant_model.insertTextData(text);
+        res.status(200).json({ textID });
+    } catch (error) {
+        console.error('Error inserting text data:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+// Route for inserting prediction data into Predictions table
+app.post('/insertPredictionData', async (req, res) => {
+    try {
+        const { textID, predictionResult } = req.body;
+        await merchant_model.insertPredictionData(textID, predictionResult);
+        res.status(200).send('Prediction data inserted successfully');
+    } catch (error) {
+        console.error('Error inserting prediction data:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
 
 app.listen(port, () => {
     console.log(`App running on port ${port}.`);
