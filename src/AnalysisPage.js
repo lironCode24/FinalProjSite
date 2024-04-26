@@ -32,6 +32,10 @@ const AnalysisPage = () => {
             if (inputText.trim() === '') {
                 setErrorMessage('Input text cannot be empty');
                 return;
+            }
+            else if (inputText.trim().length<20) {
+                setErrorMessage('Enter full conversation');
+                return;
             } else {
                 setErrorMessage('');
             }
