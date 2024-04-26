@@ -146,8 +146,11 @@ const AnalysisPage = () => {
             <div className="logo-container">
                 <img src={logo} alt="Logo" className="logo" />
             </div>
-            <Link to="/profile" className="profile-link">View Profile</Link>
             <h1>NLP Analysis Tool</h1>
+            <p className="instructions">
+                Enter text into the field below and click 'Analyze' to see the analysis results.<br />
+                Make sure your entries are detailed enough for accurate predictions.
+            </p>
 
             {errorMessage && <p className="error-message">{errorMessage}</p>}
             <textarea
@@ -158,17 +161,17 @@ const AnalysisPage = () => {
                 rows={10}
                 cols={50}
             />
-            <button className="analyze-btn" onClick={handleSubmit} disabled={isLoading}>
-                {isLoading ? 'Analyzing...' : 'Analyze'}
+            <button className="analyze-btn" onClick={handleSubmit} disabled={isLoading} style={{ backgroundColor: 'var(--secondary-color)' }}>
+                {isLoading ? <div className="spinner"></div> : 'Analyze'}
             </button>
+
             {analysisResult && (
                 <div className="result-container">
                     <p>{getCurrentDateTime()}</p>
                     <h2>Analysis Result</h2>
-                    <p>{analysisResult}</p>
+                    <p style={{ fontWeight: 'bold', color: '#00000' }}>{analysisResult}</p> {/* Example of highlighting */}
                 </div>
             )}
-            <button className="logout-btn" onClick={handleLogout}>Logout</button>
         </div>
     );
 };

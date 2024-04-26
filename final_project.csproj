@@ -25342,11 +25342,17 @@
     <Content Include="public\logo192.png" />
     <Content Include="public\logo512.png" />
     <Content Include="public\robots.txt" />
+    <Content Include="src\HomePage.css" />
+    <Content Include="src\HomePage.js" />
+    <Content Include="src\AboutPage.css" />
+    <Content Include="src\AboutPage.js" />
     <Content Include="src\AnalysisPage.css" />
     <Content Include="src\AnalysisPage.js" />
     <Content Include="src\App.css" />
     <Content Include="src\App.js" />
     <Content Include="src\App.test.js" />
+    <Content Include="src\Header.css" />
+    <Content Include="src\Header.js" />
     <Content Include="src\index.css" />
     <Content Include="src\index.js" />
     <Content Include="src\LoginPage.js" />

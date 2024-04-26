@@ -210,7 +210,7 @@ const RegisterPage = () => {
             </form>
 
             {/* Add Link component for back to login button */}
-            <Link to="/login" className="back-to-login">Back to Login</Link>
+            <Link to="/login" className="back-to-login">Already have an account? Log in</Link>
         </div>
     );
 };

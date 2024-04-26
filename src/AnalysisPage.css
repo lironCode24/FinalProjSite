@@ -1,112 +1,104 @@
-/* AnalysisPage.css */
+:root {
+    --primary-color: #DAA5AD; /* Soft rose for primary actions */
+    --secondary-color: #F39C12; /* Complementary color for secondary actions */
+    --background-color: #FFFFFF; /* White background */
+    --text-color: #5C3A41; /* Dark rose color for text */
+    --error-color: #FF6B6B; /* Soft red for errors */
+    --success-color: #4CAF50; /* Green for success messages */
+    --font-size-large: 24px;
+    --font-size-medium: 18px;
+    --font-size-small: 16px;
+}
 
 .main-container {
-    width: 100%;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    background-color: #f0f0f0;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--background-color);
 }
 
-
-body {
-    margin: 0;
-    padding: 0;
-}
-
-.logo-container {
-    position: absolute; /* Position the button absolute to the main container */
-    top: 20px;
-    right: 30px; /* Adjust right position as needed */
-    margin-bottom: 20px; /* Add margin to separate logo from other elements */
+.logo, .logout-btn, .profile-link, .analyze-btn, .back-to-analyze-btn {
+    border-radius: 5px;
+    font-size: var(--font-size-small);
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .logo {
-    width: 200px; /* Adjust the width as needed */
+    width: 200px;
 }
+
+.logout-btn, .profile-link {
+    position: absolute;
+    top: 30px;
+    padding: 10px 20px; /* Uniform padding */
+    width: 120px; /* Uniform width */
+    text-align: center; /* Centers text inside buttons */
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logout-btn {
+    right: 30px;
+    background-color: var(--error-color);
+}
+
+.profile-link {
+    right: 160px; /* Consistent spacing from the right */
+    background-color: var(--primary-color);
+}
+
+    .analyze-btn, .profile-link:hover, .back-to-analyze-btn {
+        background-color: var(--secondary-color);
+    }
 
 .text-area {
     width: 100%;
     max-width: 800px;
     height: 200px;
-    margin-bottom: 20px;
-    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    resize: none; /* Prevent textarea from being resized */
-    font-size: 16px; /* Set font size for better readability */
+    resize: none;
+    font-size: var(--font-size-medium);
 }
-
-.logout-btn {
-    position: absolute; /* Position the button absolute to the main container */
-    top: 30px;
-    right: 550px; /* Adjust right position as needed */
-    margin-bottom: 10px; /* Adjust margin bottom */
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: red;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none; /* Remove underline from the link */
-    transition: background-color 0.3s;
-}
-
-.analyze-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-bottom: 20px; /* Add margin below the analyze button */
-}
-
-    .analyze-btn:hover {
-        background-color: #0056b3;
-    }
 
 .result-container {
     width: 100%;
     max-width: 800px;
+    background-color: var(--background-color);
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
-    .result-container p {
-        margin-bottom: 10px;
-        font-size: 16px; /* Set font size for better readability */
-    }
 
     .result-container h2 {
-        margin-bottom: 10px;
-        color: #007bff; /* Change color to match the button color */
+        color: var(--primary-color);
+        font-size: var(--font-size-large);
     }
 
-.profile-link {
-    position: absolute; /* Position the button absolute to the main container */
-    top: 30px;
-    right: 900px; /* Adjust right position as needed */
-    margin-bottom: 10px; /* Adjust margin bottom */
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none; /* Remove underline from the link */
-    transition: background-color 0.3s;
-}
-
-    .profile-link:hover {
-        background-color: #0056b3;
+    .result-container p {
+        font-size: var(--font-size-medium);
+        color: var(--text-color);
+        text-align: center;
     }
 
-h1 {
-    position: fixed;
-    top: 90px;
+.instructions {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f0f0f0; /* Consider changing to match the theme */
+    font-size: var(--font-size-medium);
+    color: var(--text-color);
+    width: 40%; /* Adjust width as needed */
+    text-align: center; /* Center the text */
 }

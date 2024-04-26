@@ -61,7 +61,7 @@ const LoginPage = () => {
             </div>
             <button className="login-btn" onClick={handleLogin}>Login</button>
             {/* Add Link component for register button */}
-            <Link to="/register" className="register-link">Sign in</Link>
+            <Link to="/register" className="register-link">Sign up</Link>
         </div>
     );
 };

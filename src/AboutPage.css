@@ -1,0 +1,20 @@
+/* AboutPage.css */
+.about-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff; /* Consider a light background for readability */
+    border-radius: 8px; /* Soft rounded corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15); /* Subtle shadow for depth */
+}
+
+    .about-container h1, .about-container h2, .about-container h3 {
+        color: #2c3e50; /* Dark blue for headers for emphasis */
+    }
+
+    .about-container p {
+        text-align: justify; /* Ensures text is evenly justified */
+        line-height: 1.6; /* Improves readability */
+        color: #666; /* Dark grey for paragraph text */
+        margin-bottom: 16px; /* Spacing between paragraphs */
+    }

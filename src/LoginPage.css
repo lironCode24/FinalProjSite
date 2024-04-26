@@ -1,7 +1,18 @@
-﻿
+﻿:root {
+    --primary-color: #DAA5AD; /* Soft rose for primary actions */
+    --secondary-color: #F39C12; /* Complementary color for secondary actions */
+    --background-color: #FFFFFF; /* White background */
+    --text-color: #5C3A41; /* Dark rose color for text */
+    --error-color: #FF6B6B; /* Soft red for errors */
+    --success-color: #4CAF50; /* Green for success messages */
+    --font-size-medium: 16px; /* Adjusted font size for consistency */
+}
+
 body {
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif; /* Improved typography */
+    background-color: var(--background-color); /* White background */
 }
 
 .login-container {
@@ -11,7 +22,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #f0f0f0;
 }
 
 .input-field {
@@ -23,24 +33,24 @@ body {
 }
 
 .error-message {
-    color: red;
+    color: var(--error-color); /* Soft red for error messages */
     margin-bottom: 15px;
 }
 
 /* Login button */
 .login-btn {
     padding: 10px;
-    background-color: #007bff;
-    color: #fff;
+    background-color: var(--primary-color); /* Soft rose color */
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-    font-size: 16px; /* Set font size for login button */
+    font-size: var(--font-size-medium); /* Adjusted font size for consistency */
 }
 
     .login-btn:hover {
-        background-color: #0056b3;
+        background-color: #E88FA7; /* Darker rose color on hover for feedback */
     }
 
 /* Register button */
@@ -49,16 +59,16 @@ body {
     text-align: center;
     margin-top: 20px; /* Add margin to separate from other elements */
     text-decoration: none;
-    color: #007bff; /* Button color */
+    color: var(--primary-color); /* Soft rose color */
     transition: color 0.3s; /* Smooth transition for color change */
     padding: 10px;
     border: none;
     border-radius: 5px;
-    font-size: 16px; /* Set font size for register button */
+    font-size: var(--font-size-medium); /* Adjusted font size for consistency */
 }
 
     .register-link:hover {
-        color: #0056b3; /* Darker color on hover */
+        color: #E88FA7; /* Darker rose color on hover */
     }
 
 .logo {

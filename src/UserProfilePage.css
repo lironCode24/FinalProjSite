@@ -1,8 +1,20 @@
-/* UserProfilePage.css */
+:root {
+    --primary-color: #DAA5AD; /* Soft rose for primary actions */
+    --secondary-color: #F39C12; /* Complementary color for secondary actions */
+    --background-color: #FFFFFF; /* White background */
+    --text-color: #5C3A41; /* Dark rose color for text */
+    --error-color: #FF6B6B; /* Soft red for errors */
+    --success-color: #4CAF50; /* Green for success messages */
+    --font-size-large: 24px;
+    --font-size-medium: 18px;
+    --font-size-small: 16px;
+}
 
 body {
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif; /* Improved typography */
+    background-color: var(--background-color); /* White background */
 }
 
 .user-profile-container {
@@ -12,49 +24,57 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #f0f0f0;
 }
 
 .profile-header {
     display: flex;
+    flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
 }
 
 .profile-image {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    margin-right: 20px;
+    margin: 20px;
+    border: 3px solid var(--primary-color); /* Soft rose border */
 }
 
 .profile-name {
     margin: 0;
-    color: #333;
+    color: var(--text-color);
+    font-size: var(--font-size-large); /* Larger font for emphasis */
 }
 
 .user-details {
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Spacing between cards */
 }
 
-    .user-details p {
-        margin-bottom: 10px;
-        color: #555;
-    }
+.user-detail-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    width: 200px; /* Fixed width for consistency */
+    text-align: center; /* Centering text */
+}
 
 .back-to-analyze-btn {
-    display: inline-block;
     padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: #fff;
+    font-size: var(--font-size-medium);
+    background-color: var(--secondary-color); /* Soft rose color */
+    color: white;
     border: none;
     border-radius: 5px;
     text-decoration: none;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-top: 30px; /* Adds space above the button */
 }
 
     .back-to-analyze-btn:hover {
-        background-color: #0056b3;
+        background-color: #E88FA7; /* Darker rose color on hover for feedback */
     }
