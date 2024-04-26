@@ -33,7 +33,7 @@ const AnalysisPage = () => {
                 setErrorMessage('Input text cannot be empty');
                 return;
             }
-            else if (inputText.trim().length<20) {
+            else if (inputText.trim().length < 20) {
                 setErrorMessage('Enter full conversation');
                 return;
             } else {
@@ -74,14 +74,20 @@ const AnalysisPage = () => {
         }
     };
 
+
     const insertTextData = async (text) => {
+        const accessToken = localStorage.getItem('accessToken');
+        if (!accessToken) {
+            console.error('Access token not found');
+            return;
+        }
         try {
             const response = await fetch('http://localhost:3001/insertTextData', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ text }),
+                body: JSON.stringify({ text, accessToken }),
             });
 
             if (!response.ok) {

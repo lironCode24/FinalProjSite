@@ -1,12 +1,27 @@
+-- Insert Admin role
+INSERT INTO public.userrole (roleid, rolename)
+VALUES (1, 'Admin');
 
-INSERT INTO TextData (RawText, UserID)
-VALUES
-    ('Sample text 1', 1),
-    ('Another sample text', 2),
-    ('Text data for analysis', 3);
+-- Insert User role
+INSERT INTO public.userrole (roleid, rolename)
+VALUES (2, 'User');
 
-INSERT INTO Predictions (TextID, AccuracyLevel, PredictionResult)
-VALUES
-    (1, 0.75, 'Positive'),
-    (2, 0.85, 'Negative'),
-    (3, 0.90, 'Neutral');
+-- Insert 'emergency' prediction type
+INSERT INTO public.predictiontype (predictionid, predictionname)
+VALUES (0, 'emergency');
+
+-- Insert 'emotional support non urgent' prediction type
+INSERT INTO public.predictiontype (predictionid, predictionname)
+VALUES (1, 'emotional support non urgent');
+
+-- Insert 'emotional support urgent' prediction type
+INSERT INTO public.predictiontype (predictionid, predictionname)
+VALUES (2, 'emotional support urgent');
+
+-- Insert 'legal aid non urgent' prediction type
+INSERT INTO public.predictiontype (predictionid, predictionname)
+VALUES (3, 'legal aid non urgent');
+
+-- Insert 'legal aid urgent' prediction type
+INSERT INTO public.predictiontype (predictionid, predictionname)
+VALUES (4, 'legal aid urgent');

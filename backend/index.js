@@ -100,12 +100,29 @@ app.post('/logout', async (req, res) => {
     }
 });
 
+// Route for getting role by id
+app.get('/getRole', async (req, res) => {
+    try {
+        const { roleId } = req.query; // Extract roleId from query parameters
+
+        // Call the merchant_model.getRoleById function to retrieve the role name
+        const roleName = await merchant_model.getRoleById(roleId);
+
+        // Send the retrieved role name back as a JSON response
+        res.status(200).json({ roleName });
+    } catch (error) {
+        console.error('Error during get role:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+
 // Route for inserting text data into TextData table
 app.post('/insertTextData', async (req, res) => {
     try {
-        const { text } = req.body;
-        const textID = await merchant_model.insertTextData(text);
-        res.status(200).json({ textID });
+        const { text, accessToken } = req.body;
+        const textID = await merchant_model.insertTextData(text, accessToken);
+        res.status(200).json({ textID, accessToken });
     } catch (error) {
         console.error('Error inserting text data:', error);
         res.status(500).json({ error: 'Internal server error' });
@@ -123,6 +140,7 @@ app.post('/insertPredictionData', async (req, res) => {
         res.status(500).json({ error: 'Internal server error' });
     }
 });
+
 
 
 app.listen(port, () => {

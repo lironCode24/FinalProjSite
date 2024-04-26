@@ -88,7 +88,6 @@ const getUsersByUsername = async (username) => {
     }
 };
 
-
 //create a new user record in the database
 const createUser = async (body) => {
     try {
@@ -100,11 +99,18 @@ const createUser = async (body) => {
         // Encrypt the password before storing it in the database
         const passwordHash = await encryptPassword(password);
 
+        // Fetch the roleid based on the rolename
+        const roleQuery = 'SELECT roleid FROM userrole WHERE rolename = $1';
+        const roleResult = await pool.query(roleQuery, [role]);
+        const roleId = roleResult.rows[0].roleid;
+
         // Insert the new user into the database
-        const result = await pool.query(
-            "INSERT INTO public.users(userid, username, fullname, email, role, passwordhash) VALUES($1, $2, $3, $4, $5, $6) RETURNING *",
-            [userid, username, fullname, email, role, passwordHash]
-        );
+        const insertQuery = `
+            INSERT INTO public.users(userid, username, fullname, email, roleId, passwordhash)
+            VALUES($1, $2, $3, $4, $5, $6)
+            RETURNING *
+        `;
+        const result = await pool.query(insertQuery, [userid, username, fullname, email, roleId, passwordHash]);
 
         return `A new user has been added: ${JSON.stringify(result.rows[0])}`;
     } catch (error) {
@@ -112,6 +118,7 @@ const createUser = async (body) => {
         throw new Error("Error creating user");
     }
 };
+
 
 
 // Function to generate a random access token
@@ -145,7 +152,7 @@ const loginUser = async (username, password, res) => {
         const accessToken = generateAccessToken(user);
 
         // Update the access token in the database
-        await pool.query('UPDATE users SET access_token = $1 WHERE userid = $2', [accessToken, user.userid]);
+        await pool.query('UPDATE users SET AccessToken = $1 WHERE userid = $2', [accessToken, user.userid]);
 
         // Return the user's information along with the access token
         res.json({
@@ -163,7 +170,7 @@ const deleteUserToken = async (accessToken, res) => {
     try {
 
         // Update the access token in the database to an empty string
-        await pool.query('UPDATE users SET access_token = $1 WHERE access_token = $2', ["", accessToken]);
+        await pool.query('UPDATE users SET AccessToken = $1 WHERE AccessToken = $2', ["", accessToken]);
 
         res.status(200).json({ message: 'Logout successful' });
     } catch (error) {
@@ -176,7 +183,7 @@ const deleteUserToken = async (accessToken, res) => {
 const getUserProfile = async (accessToken, res) => {
     try {
         // Query the database to fetch the user's profile based on the access token
-        const result = await pool.query('SELECT * FROM users WHERE access_token = $1', [accessToken]);
+        const result = await pool.query('SELECT * FROM users WHERE AccessToken = $1', [accessToken]);
         const userProfile = result.rows[0];
 
         // Check if the user profile exists
@@ -189,7 +196,7 @@ const getUserProfile = async (accessToken, res) => {
             username: userProfile.username,
             fullname: userProfile.fullname,
             email: userProfile.email,
-            role: userProfile.role
+            roleId: userProfile.roleid
         });
     } catch (error) {
         console.error('Error fetching user profile:', error);
@@ -198,8 +205,11 @@ const getUserProfile = async (accessToken, res) => {
 };
 
 
-const insertTextData = async (rawText, userID) => {
+const insertTextData = async (rawText, accessToken) => {
     try {
+        const resultForId = await pool.query('SELECT * FROM users WHERE AccessToken = $1', [accessToken]);
+        console.log(resultForId.rows[0]);
+        const userID = resultForId.rows[0].userid;
         const query = 'INSERT INTO TextData (RawText, UserID) VALUES ($1, $2) RETURNING TextID';
         const values = [rawText, userID];
         const result = await pool.query(query, values);
@@ -210,12 +220,34 @@ const insertTextData = async (rawText, userID) => {
     }
 };
 
+const getRoleById = async (roleId) => {
+    try {
+        const query = 'SELECT rolename FROM userrole WHERE roleid = $1';
+        const result = await pool.query(query, [roleId]);
+
+        if (result.rows.length > 0) {
+            return result.rows[0].rolename;
+        } else {
+            throw new Error('Role not found');
+        }
+    } catch (error) {
+        console.error('Error fetching role:', error);
+        throw new Error('Error fetching role');
+    }
+};
+
+
 const insertPredictionData = async (textID, predictionResult) => {
     try {
         // Generate a random predictionid between 1 and 9999
         const predictionid = Math.floor(Math.random() * 9999) + 1;
-        const query = 'INSERT INTO public.predictions(predictionid, textid, predictionresult) VALUES ($1, $2, $3)';
-        const values = [predictionid,textID, predictionResult];
+        // Fetch the roleid based on the rolename
+        const predictionQuery = 'SELECT predictionid FROM predictiontype WHERE predictionname = $1';
+        const predictionResultQ = await pool.query(predictionQuery, [predictionResult]);
+        const predictionTypeID = predictionResultQ.rows[0].predictionid;
+
+        const query = 'INSERT INTO public.predictions(predictionid, textid, PredictionTypeID) VALUES ($1, $2, $3)';
+        const values = [predictionid, textID, predictionTypeID];
         await pool.query(query, values);
     } catch (error) {
         console.error('Error inserting prediction data:', error);
@@ -232,6 +264,7 @@ module.exports = {
     getUserProfile,
     deleteUserToken,
     insertTextData,
+    getRoleById,
     insertPredictionData
 };
 
