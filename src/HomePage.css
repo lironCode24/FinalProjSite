@@ -1,34 +1,43 @@
-/* HomePage.css */
-
-
 .home-container {
     max-width: 800px;
-    margin: 100px auto; /* Adjust margin to position the container lower on the screen */
+    margin: 100px auto;
     padding: 40px;
     background-color: #f9f9f9;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-image: url('./backgroundImage.png');
-    background-size: cover; /* Cover the entire viewport */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Do not repeat the background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-    .home-container h1 {
-        color: #2c3e50;
-        font-size: 36px;
-        margin-bottom: 30px; /* Increase spacing below the heading */
-    }
+.section {
+    margin-top: 40px;
+}
 
-    .home-container h2 {
-        color: #2c3e50;
-        font-size: 24px;
-        margin-top: 40px; /* Increase top margin for better spacing */
-        margin-bottom: 20px;
-    }
+.home-container h1 {
+    color: #2c3e50;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
 
-    .home-container p {
-        color: #666;
-        line-height: 1.6;
-        margin-bottom: 20px;
-    }
+.home-container h2 {
+    color: #2c3e50;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.home-container p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Style for FontAwesome icons */
+svg {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+}

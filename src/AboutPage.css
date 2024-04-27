@@ -1,28 +1,36 @@
-/* AboutPage.css */
-
 .about-container {
     max-width: 800px;
     margin: auto;
     padding: 40px;
-    background-color: #f9f9f9; /* Lighter background for improved contrast */
-    border-radius: 12px; /* Rounded corners for a softer look */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-image: url('./backgroundImage.png');
-    background-size: cover; /* Cover the entire viewport */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Do not repeat the background image */
-
-    margin: 80px auto; /* Adjust margin to position the container lower on the screen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 80px auto;
 }
 
-    .about-container h1, .about-container h2, .about-container h3 {
-        color: #2c3e50; /* Dark blue for headers for emphasis */
-        margin-bottom: 20px; /* Spacing below headers */
+    .about-container h1,
+    .about-container h2,
+    .about-container h3 {
+        color: #2c3e50;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
     }
 
     .about-container p {
-        text-align: justify; /* Ensures text is evenly justified */
-        line-height: 1.6; /* Improves readability */
-        color: #666; /* Dark grey for paragraph text */
-        margin-bottom: 16px; /* Spacing between paragraphs */
+        text-align: justify;
+        line-height: 1.6;
+        color: #666;
+        margin-bottom: 16px;
     }
+
+/* Style for FontAwesome icons */
+svg {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+}

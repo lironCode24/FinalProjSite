@@ -196,7 +196,8 @@ const getUserProfile = async (accessToken, res) => {
             username: userProfile.username,
             fullname: userProfile.fullname,
             email: userProfile.email,
-            roleId: userProfile.roleid
+            roleId: userProfile.roleid,
+            profileImg: userProfile.profileimg
         });
     } catch (error) {
         console.error('Error fetching user profile:', error);
@@ -255,6 +256,19 @@ const insertPredictionData = async (textID, predictionResult) => {
     }
 };
 
+
+const updateProfileImage = async (imageUrl,accessToken, res) => {
+    try {
+
+        // Update the access token in the database to an empty string
+        const result = await pool.query('UPDATE users SET profileimg = $1 WHERE AccessToken = $2', [imageUrl, accessToken]);
+        return `Update image : ${JSON.stringify(result.rows[0])}`;
+    } catch (error) {
+        console.error('Error during update image:', error);
+        throw new Error('Internal server error');
+    }
+};
+
 module.exports = {
     getPredictions,
     createUser,
@@ -265,6 +279,7 @@ module.exports = {
     deleteUserToken,
     insertTextData,
     getRoleById,
-    insertPredictionData
+    insertPredictionData,
+    updateProfileImage
 };
 

@@ -39,7 +39,7 @@ const RegisterPage = () => {
 
 
     const [formData, setFormData] = useState({
-        fullname:'',
+        fullname: '',
         username: '',
         email: '',
         role: '',
@@ -76,7 +76,6 @@ const RegisterPage = () => {
                 return false;
             }
 
-            console.log('http://localhost:3001/users/email?email=' + formData.email);
             // Check if the email already exists
             const emailExistsResponse = await fetch('http://localhost:3001/users/email?email=' + formData.email);
             if (!emailExistsResponse.ok) {

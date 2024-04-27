@@ -58,7 +58,7 @@
 .analyze-btn {
     padding: 12px 24px;
     font-size: var(--font-size-medium);
-    background-color: #E88FA7;
+    background-color: var(--primary-color); /* Soft rose color */
     color: white;
     border: none;
     border-radius: 5px;
@@ -69,7 +69,7 @@
 }
 
     .analyze-btn:hover {
-        background-color: var(--secondary-color);
+        background-color: #E88FA7; /* Darker rose color on hover for feedback */
     }
 
 

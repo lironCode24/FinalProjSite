@@ -1,4 +1,2 @@
-C:\Users\liron\source\repos\my-react-app\obj\x86\Debug\final_project.csproj.AssemblyReference.cache
-C:\Users\liron\source\repos\my-react-app\obj\x86\Debug\final_project.csproj.CoreCompileInputs.cache
 C:\Users\gald1\OneDrive\שולחן העבודה\frontend final project\FinalProjSite\obj\x86\Debug\final_project.csproj.AssemblyReference.cache
 C:\Users\gald1\OneDrive\שולחן העבודה\frontend final project\FinalProjSite\obj\x86\Debug\final_project.csproj.CoreCompileInputs.cache

@@ -142,6 +142,18 @@ app.post('/insertPredictionData', async (req, res) => {
 });
 
 
+// Route for Update image into users table
+app.post('/updateProfileImage', async (req, res) => {
+    try {
+        const { imageUrl, accessToken } = req.body;
+        await merchant_model.updateProfileImage(imageUrl, accessToken);
+        res.status(200).send('Update image insert successful');
+    } catch (error) {
+        console.error('Error inserting upload image data:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
 
 app.listen(port, () => {
     console.log(`App running on port ${port}.`);
