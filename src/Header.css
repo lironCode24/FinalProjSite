@@ -1,36 +1,39 @@
-﻿/* Header.css */
-.header {
-    background-color: #FCDCD1; /* Pale rose background */
-    color: #5C3A41; /* Dark rose color for text, enhances readability */
+﻿.header {
+    background-color: #DAA5AD;
+    color: #FFFFFF;
     padding: 10px 20px;
     display: flex;
-    justify-content: center; /* Center items in larger screens */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Soft shadow for depth */
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
     .header-link, .header button {
-        color: inherit; /* Ensure buttons and links inherit the parent text color */
-        background: none; /* Remove any default background */
-        border: none; /* Remove borders */
-        outline: none; /* Remove focus outline */
+        color: inherit;
+        background: none;
+        border: none;
+        outline: none;
         margin: 0 15px;
         text-decoration: none;
-        font-size: 18px; /* Slightly larger font size for readability */
+        font-size: 18px;
         transition: color 0.3s ease;
-        cursor: pointer; /* Ensure it looks clickable */
+        cursor: pointer;
     }
 
         .header-link:hover, .header button:hover,
         .header-link:focus, .header button:focus {
-            color: #DAA5AD; /* Soft rose color for hover and focus */
+            color: #5C3A41;
         }
+
+.active-link {
+    font-weight: bold; /* Example: Make active link text bold */
+}
 
 @media (max-width: 768px) {
     .header {
-        flex-direction: column; /* Stack links vertically on small screens */
+        flex-direction: column;
     }
 
         .header-link, .header button {
-            margin: 10px 0; /* Add vertical space between links */
+            margin: 10px 0;
         }
 }

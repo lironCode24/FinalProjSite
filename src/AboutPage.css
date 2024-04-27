@@ -1,15 +1,23 @@
 /* AboutPage.css */
+
 .about-container {
     max-width: 800px;
     margin: auto;
-    padding: 20px;
-    background-color: #fff; /* Consider a light background for readability */
-    border-radius: 8px; /* Soft rounded corners */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.15); /* Subtle shadow for depth */
+    padding: 40px;
+    background-color: #f9f9f9; /* Lighter background for improved contrast */
+    border-radius: 12px; /* Rounded corners for a softer look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-image: url('./backgroundImage.png');
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+
+    margin: 80px auto; /* Adjust margin to position the container lower on the screen */
 }
 
     .about-container h1, .about-container h2, .about-container h3 {
         color: #2c3e50; /* Dark blue for headers for emphasis */
+        margin-bottom: 20px; /* Spacing below headers */
     }
 
     .about-container p {

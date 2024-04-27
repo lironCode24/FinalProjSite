@@ -1,13 +1,13 @@
+/* AnalysisPage.css */
+
 :root {
-    --primary-color: #DAA5AD; /* Soft rose for primary actions */
-    --secondary-color: #F39C12; /* Complementary color for secondary actions */
+    --primary-color: #DAA5AD; /* Soft rose for primary actions (pink) */
+    --secondary-color: #F39C12; /* Complementary color for secondary actions (orange) */
     --background-color: #FFFFFF; /* White background */
     --text-color: #5C3A41; /* Dark rose color for text */
     --error-color: #FF6B6B; /* Soft red for errors */
     --success-color: #4CAF50; /* Green for success messages */
-    --font-size-large: 24px;
-    --font-size-medium: 18px;
-    --font-size-small: 16px;
+    --font-size-medium: 16px; /* Adjusted font size for consistency */
 }
 
 .main-container {
@@ -17,88 +17,102 @@
     justify-content: center;
     min-height: 100vh;
     background-color: var(--background-color);
-}
-
-.logo, .logout-btn, .profile-link, .analyze-btn, .back-to-analyze-btn {
-    border-radius: 5px;
-    font-size: var(--font-size-small);
-    padding: 10px 20px;
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    padding: 40px;
+    box-sizing: border-box;
+    background-image: url('./backgroundImageWhite.png');
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the background image */
 }
 
 .logo {
-    width: 200px;
+    width: 120px;
 }
 
-.logout-btn, .profile-link {
-    position: absolute;
-    top: 30px;
-    padding: 10px 20px; /* Uniform padding */
-    width: 120px; /* Uniform width */
-    text-align: center; /* Centers text inside buttons */
-    border-radius: 5px;
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.instructions-He,
+.instructions-En {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f0f0f0;
+    font-size: var(--font-size-medium);
+    color: var(--text-color);
+    text-align: center;
+    border-radius: 8px;
 }
 
-.logout-btn {
-    right: 30px;
-    background-color: var(--error-color);
+.instructions-He {
+    direction: rtl;
 }
-
-.profile-link {
-    right: 160px; /* Consistent spacing from the right */
-    background-color: var(--primary-color);
-}
-
-    .analyze-btn, .profile-link:hover, .back-to-analyze-btn {
-        background-color: var(--secondary-color);
-    }
-
 .text-area {
     width: 100%;
     max-width: 800px;
     height: 200px;
+    margin-top: 20px;
+    padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px;
     resize: none;
     font-size: var(--font-size-medium);
 }
 
+.analyze-btn {
+    padding: 12px 24px;
+    font-size: var(--font-size-medium);
+    background-color: #E88FA7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 30px;
+}
+
+    .analyze-btn:hover {
+        background-color: var(--secondary-color);
+    }
+
+
+.error-message {
+    color: var(--error-color);
+    font-size: var(--font-size-medium);
+    margin-top: 20px;
+    padding: 8px;
+    background-color: #ffeeee;
+    border: 1px solid #ffcccc;
+    border-radius: 8px;
+    width: 40%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+
 .result-container {
     width: 100%;
     max-width: 800px;
-    background-color: var(--background-color);
-    border: 1px solid #dee2e6;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-    .result-container h2 {
-        color: var(--primary-color);
-        font-size: var(--font-size-large);
-    }
+
+.main-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--primary-color); /* Set primary color for heading */
+    font-size: 32px; /* Larger font size for heading */
+    font-weight: bold; /* Apply bold font weight */
+    text-transform: uppercase; /* Convert text to uppercase */
+    letter-spacing: 2px; /* Add letter spacing for emphasis */
+}
+
 
     .result-container p {
         font-size: var(--font-size-medium);
         color: var(--text-color);
-        text-align: center;
+        line-height: 1.6;
     }
-
-.instructions {
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #f0f0f0; /* Consider changing to match the theme */
-    font-size: var(--font-size-medium);
-    color: var(--text-color);
-    width: 40%; /* Adjust width as needed */
-    text-align: center; /* Center the text */
-}

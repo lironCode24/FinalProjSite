@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './AnalysisPage.css';
 import logo from './logo-haifa.jpg'; // Import the image file with the correct path
@@ -156,22 +156,29 @@ const AnalysisPage = () => {
             <div className="logo-container">
                 <img src={logo} alt="Logo" className="logo" />
             </div>
-            <h1>NLP Analysis Tool</h1>
-            <p className="instructions">
-                Enter text into the field below and click 'Analyze' to see the analysis results.<br />
+            <h2>NLP Analysis Tool</h2>
+            <p className="instructions-En">
+                Enter text into the field below and click 'Analyze' to see the analysis results.
                 Make sure your entries are detailed enough for accurate predictions.
             </p>
+            <p className="instructions-He">
+                הזן טקסט בשדה למטה ולחץ על 'ניתוח' כדי לראות את תוצאות הניתוח. ודא שהערכים שלך מפורטים מספיק בשביל תחזיות מדויקות.
+            </p>
+
 
             {errorMessage && <p className="error-message">{errorMessage}</p>}
             <textarea
                 className="text-area"
                 value={inputText}
                 onChange={handleInputChange}
-                placeholder="Enter text to analyze..."
+                placeholder="הזן טקסט לניתוח..."
                 rows={10}
                 cols={50}
+                dir="rtl" // Set text direction to right-to-left (RTL)
+                lang="he" // Specify language as Hebrew
             />
-            <button className="analyze-btn" onClick={handleSubmit} disabled={isLoading} style={{ backgroundColor: 'var(--secondary-color)' }}>
+
+            <button className="analyze-btn" onClick={handleSubmit} disabled={isLoading}>
                 {isLoading ? <div className="spinner"></div> : 'Analyze'}
             </button>
 
@@ -179,7 +186,7 @@ const AnalysisPage = () => {
                 <div className="result-container">
                     <p>{getCurrentDateTime()}</p>
                     <h2>Analysis Result</h2>
-                    <p style={{ fontWeight: 'bold', color: '#00000' }}>{analysisResult}</p> {/* Example of highlighting */}
+                    <p >{analysisResult}</p> {/* Example of highlighting */}
                 </div>
             )}
         </div>

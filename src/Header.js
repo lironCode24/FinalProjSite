@@ -1,5 +1,5 @@
 ﻿import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'; // Import NavLink instead of Link
 import './Header.css';
 
 const Header = ({ isLoggedIn }) => {
@@ -11,7 +11,6 @@ const Header = ({ isLoggedIn }) => {
                 return;
             }
 
-            // Send a request to update the access token to null in the backend
             const response = await fetch('http://localhost:3001/logout', {
                 method: 'POST',
                 headers: {
@@ -21,9 +20,8 @@ const Header = ({ isLoggedIn }) => {
             });
 
             if (response.ok) {
-                // Update the access token in the local storage
                 localStorage.removeItem('accessToken');
-                window.location.href = '/login'; // Navigate to the login page
+                window.location.href = '/login';
             } else {
                 console.error('Logout failed');
             }
@@ -34,17 +32,27 @@ const Header = ({ isLoggedIn }) => {
 
     return (
         <div className="header">
-            <Link to="/" className="header-link">Home</Link>
-            <Link to="/about" className="header-link">About</Link>
-            <Link to="/analysis" className="header-link">Analysis</Link>
-            <Link to="/profile" className="header-link">Profile</Link>
+            <NavLink exact to="/" className="header-link" activeClassName="active-link">
+                Home
+            </NavLink>
             {isLoggedIn ? (
                 <>
+                    <NavLink to="/analysis" className="header-link" activeClassName="active-link">
+                        Analysis
+                    </NavLink>
+                    <NavLink to="/profile" className="header-link" activeClassName="active-link">
+                        Profile
+                    </NavLink>
                     <button onClick={handleLogout} className="header-link">Logout</button>
                 </>
             ) : (
-                <Link to="/login" className="header-link">Login</Link>
+                <NavLink to="/login" className="header-link" activeClassName="active-link">
+                    Login
+                </NavLink>
             )}
+            <NavLink to="/about" className="header-link" activeClassName="active-link">
+                About
+            </NavLink>
         </div>
     );
 };

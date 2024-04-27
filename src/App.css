@@ -6,6 +6,10 @@
     box-shadow: none; /* Optional: Remove shadow if not desired */
     background-color: transparent; /* Adjust background color as needed */
     margin: 0 auto; /* Remove any auto margin to align to the top */
+    background-image: url('./backgroundImageWhite.png');
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the background image */
 }
 
 
@@ -17,23 +21,17 @@
     border-radius: 5px;
 }
 
-.analyze-btn {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.analyze-btn:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
-
-.analyze-btn:hover {
-    background-color: #0056b3;
+.error-message {
+    color: var(--error-color);
+    font-size: var(--font-size-medium);
+    margin-top: 20px;
+    padding: 8px;
+    background-color: #ffeeee;
+    border: 1px solid #ffcccc;
+    border-radius: 8px;
+    width: 40%;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .result-container {

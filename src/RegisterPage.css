@@ -1,3 +1,5 @@
+/* RegisterPage.css */
+
 :root {
     --primary-color: #DAA5AD; /* Soft rose for primary actions */
     --secondary-color: #F39C12; /* Complementary color for secondary actions */
@@ -15,6 +17,10 @@ body {
     background-color: var(--background-color); /* White background */
 }
 
+.logo {
+    width: 120px;
+}
+
 .register-container {
     width: 100%;
     min-height: 100vh;
@@ -24,14 +30,15 @@ body {
     align-items: center;
 }
 
-.register-content {
-    position: relative; /* Needed for absolute positioning of children */
-}
-
-.register-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
+    .register-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: var(--primary-color); /* Set primary color for heading */
+        font-size: 32px; /* Larger font size for heading */
+        font-weight: bold; /* Apply bold font weight */
+        text-transform: uppercase; /* Convert text to uppercase */
+        letter-spacing: 2px; /* Add letter spacing for emphasis */
+    }
 
 .error-message,
 .success-message {
@@ -39,7 +46,16 @@ body {
 }
 
 .error-message {
-    color: var(--error-color); /* Soft red for error messages */
+    color: var(--error-color);
+    font-size: var(--font-size-medium);
+    margin-top: 20px;
+    padding: 8px;
+    background-color: #ffeeee;
+    border: 1px solid #ffcccc;
+    border-radius: 8px;
+    width: 40%;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .success-message {
@@ -63,10 +79,8 @@ body {
 
 .passwordFormat {
     font-size: 14px;
-    position: absolute; /* Position it absolutely within the .register-content */
-    bottom: -20px; /* Position it below the input field */
-    left: 10px; /* Align it with the input field's left edge */
     color: var(--error-color); /* Soft red for error messages */
+    position: relative; /* Position it relative to the input field */
     display: none; /* Initially hidden */
 }
 

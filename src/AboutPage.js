@@ -1,5 +1,5 @@
 import React from 'react';
-import './AboutPage.css';  // Ensure your CSS styles are appropriately adjusted for the new content
+import './AboutPage.css'; // Ensure your CSS styles are appropriately imported for the new content
 
 const AboutPage = () => {
     return (
@@ -31,7 +31,7 @@ const AboutPage = () => {
 
             <h3>Acknowledgements</h3>
             <p>
-                Special thanks to the Support center for Victims of sexual assault in Haifa and the North.
+                Special thanks to the <a href="https://www.1202.org.il/local/haifa/about" target="_blank" rel="noopener noreferrer">Support Center for Victims of Sexual Assault in Haifa and the North</a>.
             </p>
         </div>
     );

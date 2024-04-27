@@ -1,29 +1,29 @@
+/* UserProfilePage.css */
+
 :root {
     --primary-color: #DAA5AD; /* Soft rose for primary actions */
     --secondary-color: #F39C12; /* Complementary color for secondary actions */
     --background-color: #FFFFFF; /* White background */
     --text-color: #5C3A41; /* Dark rose color for text */
-    --error-color: #FF6B6B; /* Soft red for errors */
-    --success-color: #4CAF50; /* Green for success messages */
     --font-size-large: 24px;
     --font-size-medium: 18px;
-    --font-size-small: 16px;
 }
 
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif; /* Improved typography */
-    background-color: var(--background-color); /* White background */
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 .user-profile-container {
-    width: 100%;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px;
 }
 
 .profile-header {
@@ -37,44 +37,45 @@ body {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    margin: 20px;
-    border: 3px solid var(--primary-color); /* Soft rose border */
+    margin-bottom: 20px;
+    border: 3px solid var(--primary-color);
 }
 
 .profile-name {
     margin: 0;
-    color: var(--text-color);
-    font-size: var(--font-size-large); /* Larger font for emphasis */
+    font-size: var(--font-size-large);
 }
 
 .user-details {
     display: flex;
-    justify-content: center;
-    gap: 20px; /* Spacing between cards */
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 .user-detail-card {
-    background: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
-    width: 200px; /* Fixed width for consistency */
-    text-align: center; /* Centering text */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
 }
 
 .back-to-analyze-btn {
-    padding: 10px 20px;
+    padding: 12px 24px;
     font-size: var(--font-size-medium);
-    background-color: var(--secondary-color); /* Soft rose color */
+    background-color: #E88FA7 ;
     color: white;
     border: none;
     border-radius: 5px;
     text-decoration: none;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin-top: 30px; /* Adds space above the button */
+    margin-top: 30px;
 }
 
     .back-to-analyze-btn:hover {
-        background-color: #E88FA7; /* Darker rose color on hover for feedback */
+        background-color:var(--secondary-color);
     }
+
+
