@@ -6,7 +6,7 @@
     box-shadow: none; /* Optional: Remove shadow if not desired */
     background-color: transparent; /* Adjust background color as needed */
     margin: 0 auto; /* Remove any auto margin to align to the top */
-    background-image: url('./backgroundImageWhite.png');
+    background-image: url('./images/backgroundImageWhite.png');
     background-size: cover; /* Cover the entire viewport */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Do not repeat the background image */
