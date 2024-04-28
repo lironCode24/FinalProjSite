@@ -17,10 +17,11 @@ CREATE TABLE Users (
     Username VARCHAR(255) NOT NULL,
     FullName VARCHAR(255) NOT NULL,
     Email VARCHAR(255) NOT NULL,
-    ProfileImg VARCHAR(255) NOT NULL DEFAULT './profileIcon1.jpg', -- Default profile image path
+    ProfileImg VARCHAR(255) NOT NULL DEFAULT './images/profileIcon1.jpg', -- Default profile image path
     RoleID INT NOT NULL,
     PasswordHash VARCHAR(255) NOT NULL,
     AccessToken VARCHAR(255),
+    isApproved BOOLEAN DEFAULT FALSE, -- New field for user approval status
     CONSTRAINT unique_username UNIQUE (Username),
     CONSTRAINT unique_email UNIQUE (Email),
     FOREIGN KEY (RoleID) REFERENCES userrole(RoleID)

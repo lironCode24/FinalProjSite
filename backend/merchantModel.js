@@ -147,6 +147,9 @@ const loginUser = async (username, password, res) => {
         if (!isPasswordValid) {
             return res.status(401).json({ error: 'Invalid username or password' });
         }
+        if (!user.isapproved) {
+            return res.status(403).json({ error: 'User not approved. Connect your administrator.' });
+        }
 
         // If the credentials are valid, generate a new access token
         const accessToken = generateAccessToken(user);
@@ -257,7 +260,7 @@ const insertPredictionData = async (textID, predictionResult) => {
 };
 
 
-const updateProfileImage = async (imageUrl,accessToken, res) => {
+const updateProfileImage = async (imageUrl, accessToken, res) => {
     try {
 
         // Update the access token in the database to an empty string
@@ -266,6 +269,29 @@ const updateProfileImage = async (imageUrl,accessToken, res) => {
     } catch (error) {
         console.error('Error during update image:', error);
         throw new Error('Internal server error');
+    }
+};
+
+const getAllUsersToApprove = async (res) => {
+    try {
+        const query = 'SELECT * FROM Users WHERE isApproved = false';
+        const result = await pool.query(query);
+        res.status(200).json(result.rows);
+    } catch (error) {
+        console.error('Error fetching unapproved users:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+};
+
+
+const approveUser = async (req, res) => {
+    try {
+        const query = 'UPDATE Users SET isApproved = true WHERE UserID = $1';
+        const result = await pool.query(query, [req]);
+        res.status(200).json({ message: 'User approved successfully' });
+    } catch (error) {
+        console.error('Error approving user:', error);
+        res.status(500).json({ error: 'Internal server error' });
     }
 };
 
@@ -280,6 +306,8 @@ module.exports = {
     insertTextData,
     getRoleById,
     insertPredictionData,
-    updateProfileImage
+    updateProfileImage,
+    getAllUsersToApprove,
+    approveUser
 };
 

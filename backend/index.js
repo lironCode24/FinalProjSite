@@ -77,6 +77,27 @@ app.post('/createUser', (req, res) => {
         });
 });
 
+// Route for approve a user
+app.post('/approveUser', async (req, res) => {
+    try {
+        const userID = req.body.userID;
+        await merchant_model.approveUser(userID, res);
+    } catch (error) {
+        console.error('Error approve user profile:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+// Route to get all unapproved users
+app.get('/getAllUsersToApprove', (req, res) => {
+    try {
+        merchant_model.getAllUsersToApprove(res);
+    } catch (error) {
+        console.error('Error fetching user profile:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
 // Route for fetching user profile
 app.get('/userProfile', async (req, res) => {
     try {

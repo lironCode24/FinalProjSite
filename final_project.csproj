@@ -25342,6 +25342,8 @@
     <Content Include="public\logo192.png" />
     <Content Include="public\logo512.png" />
     <Content Include="public\robots.txt" />
+    <Content Include="src\ApprovePage.css" />
+    <Content Include="src\ApprovePage.js" />
     <Content Include="src\HomePage.css" />
     <Content Include="src\HomePage.js" />
     <Content Include="src\AboutPage.css" />

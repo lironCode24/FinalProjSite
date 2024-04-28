@@ -27,8 +27,9 @@ const LoginPage = () => {
 
                 window.location.href = '/analysis'; // Navigate to the analysis page
             } else {
-                // Authentication failed
-                setError('Invalid username or password');
+                // Handle different error cases based on status code
+                const errorData = await response.json(); // Parse error message from response
+                setError(errorData.error);
             }
         } catch (error) {
             console.error('Error during login:', error);

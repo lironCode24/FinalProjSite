@@ -4,6 +4,7 @@ import LoginPage from './LoginPage.js';
 import RegisterPage from './RegisterPage.js';
 import AnalysisPage from './AnalysisPage.js';
 import UserProfilePage from './UserProfilePage.js';
+import ApprovePage from './ApprovePage.js';
 import AboutPage from './AboutPage.js';
 import Header from './Header';  // Import the Header component
 import HomePage from './HomePage.js';  // Import the HomePage component
@@ -29,6 +30,7 @@ const App = () => {
             <div className="container">
                 <Routes>
                     <Route path="/" element={<HomePage />} />
+                    <Route path="/approveUsers" element={<ApprovePage />} />
                     {accessToken ? (
                         <>
                             <Route path="/analysis" element={<AnalysisPage />} />

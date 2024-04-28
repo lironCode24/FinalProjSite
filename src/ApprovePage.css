@@ -1,0 +1,67 @@
+/* UserApprovalsPage.css */
+
+.user-approvals-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px;
+    background-color: #f7f7f7; /* Set a light background color */
+}
+
+.page-title {
+    color: var(--primary-color);
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-align: center; /* Center-align the page title */
+}
+
+.unapproved-users-list {
+    width: 80%; /* Increase width for better readability */
+    max-width: 800px; /* Set a maximum width to avoid stretching */
+}
+
+.user-item {
+    background-image: url('./images/backgroundImage.png');
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user-details {
+    flex-grow: 1;
+    margin-right: 20px; /* Add spacing between user details and button */
+}
+
+    .user-details p {
+        margin-bottom: 10px;
+    }
+
+.approve-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .approve-button:hover {
+        background-color: #e88fa7;
+    }
+
+.no-users-message {
+    font-size: 18px;
+    color: #777;
+    text-align: center;
+    margin-top: 40px;
+}
