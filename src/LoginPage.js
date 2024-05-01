@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; // Import Link component
 import './LoginPage.css'; // Import CSS file for styling
-import logo from './logo-haifa.jpg'; // Import the image file with the correct path
+import logo from './images/logo-haifa.jpg'; // Import the image file with the correct path
 
 const LoginPage = () => {
     const [username, setUsername] = useState('');

@@ -1,32 +1,42 @@
+/* AboutPage.css */
+
 .about-container {
     max-width: 800px;
-    margin: auto;
+    margin: 80px auto;
     padding: 40px;
-    background-color: #f9f9f9;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-image: url('./images/backgroundImage.png');
+    background-color: #f9f9f9;
+    background-image: url('./images/backgroundImage2.png');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    margin: 80px auto;
+    color: #2c3e50;
+    background-size: cover;
+    background-position: center;
 }
 
-    .about-container h1,
-    .about-container h2,
-    .about-container h3 {
-        color: #2c3e50;
-        margin-bottom: 20px;
-        display: flex;
-        align-items: center;
-    }
+.about-container h2 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
 
-    .about-container p {
-        text-align: justify;
-        line-height: 1.6;
-        color: #666;
-        margin-bottom: 16px;
-    }
+.about-container p {
+    text-align: justify;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 16px;
+}
+
+.about-container a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.about-container a:hover {
+    text-decoration: underline;
+}
 
 /* Style for FontAwesome icons */
 svg {

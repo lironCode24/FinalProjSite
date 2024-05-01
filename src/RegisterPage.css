@@ -22,12 +22,13 @@ body {
 }
 
 .register-container {
-    width: 100%;
+    width: 70%;
     min-height: 100vh;
-    display: flex;
+    display:flow;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin:auto;
 }
 
     .register-container h2 {
@@ -85,7 +86,7 @@ body {
 }
 
 #password:hover + .passwordFormat {
-    display: block; /* Display the password format requirement when hovering over the password field */
+    display:flex; /* Display the password format requirement when hovering over the password field */
 }
 
 .register-container button[type="submit"] {

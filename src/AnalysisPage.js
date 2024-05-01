@@ -1,7 +1,7 @@
 ﻿import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './AnalysisPage.css';
-import logo from './logo-haifa.jpg'; // Import the image file with the correct path
+import logo from './images/logo-haifa.jpg'; // Import the image file with the correct path
 
 const AnalysisPage = () => {
     const [inputText, setInputText] = useState('');
