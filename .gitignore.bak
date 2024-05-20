@@ -23,4 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 
-backend/model/
+backend/model/*
+!backend/model/main.py

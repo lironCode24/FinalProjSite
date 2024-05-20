@@ -25,3 +25,4 @@ yarn-error.log*
 
 backend/model/*
 !backend/model/main.py
+!backend/model/model nlp
