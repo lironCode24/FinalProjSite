@@ -122,35 +122,6 @@ const AnalysisPage = () => {
         }
     };
 
-    const handleLogout = async () => {
-        try {
-            const accessToken = localStorage.getItem('accessToken');
-            if (!accessToken) {
-                console.error('Access token not found');
-                return;
-            }
-
-            // Send a request to update the access token to null in the backend
-            const response = await fetch('http://localhost:3001/logout', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ accessToken }),
-            });
-
-            if (response.ok) {
-                // Update the access token in the local storage
-                localStorage.removeItem('accessToken');
-                window.location.href = '/login'; // Navigate to the login page
-            } else {
-                console.error('Logout failed');
-            }
-        } catch (error) {
-            console.error('Error during logout:', error);
-        }
-    };
-
     return (
         <div className="main-container"> {/* Changed class name to main-container */}
             <div className="logo-container">
