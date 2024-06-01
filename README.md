@@ -33,7 +33,8 @@ Runs the backend - run this command with cmd inside the backend folder in projec
 ### Running the NLP Model API
 To run the NLP model API, navigate to the `backend/model` folder in our project directory and run the following command:
 `python main.py`
-This command starts the Flask server that hosts the NLP model API. \ The API handles incoming text data, preprocesses it, performs sentiment analysis using the trained model, and returns the predicted classification.
+This command starts the Flask server that hosts the NLP model API. \
+The API handles incoming text data, preprocesses it, performs sentiment analysis using the trained model, and returns the predicted classification.
 
 
 ## Authors
