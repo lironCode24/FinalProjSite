@@ -5,13 +5,16 @@ This project aims to harness the power of Natural Language Processing (NLP) to i
 ## Database Setup
 
 We use PostgreSQL as our database. In the DB folder of our GitHub repository, you will find two SQL files:
+
 create.sql: This file contains the SQL commands to create the necessary database tables.
 insert.sql: This file contains the SQL commands to insert initial data into the database tables.
-Steps to Setup the Database
-Install PostgreSQL on your machine if it is not already installed.
-Create a new database in PostgreSQL.
-Execute the commands in create.sql to create the database schema.
-Execute the commands in insert.sql to populate the database with initial data.
+
+Steps to Setup the Database:
+
+1. Install PostgreSQL on your machine if it is not already installed.
+2. Create a new database in PostgreSQL.
+3. Execute the commands in create.sql to create the database schema.
+4. Execute the commands in insert.sql to populate the database with initial data.
 
 ## Available Scripts
 
