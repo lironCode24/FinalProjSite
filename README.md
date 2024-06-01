@@ -18,6 +18,7 @@ Steps to Setup the Database:
 3. Execute the commands in create.sql to create the database schema.
 4. Execute the commands in insert.sql to populate the database with initial data.
 
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -28,6 +29,11 @@ The page will reload when you make changes.\
 You may also see any lint errors in the console.
 ### `node index`
 Runs the backend - run this command with cmd inside the backend folder in project
+
+### Running the NLP Model API
+To run the NLP model API, navigate to the backend/model folder in your project directory and run the following command:
+python main.py
+This command starts the Flask server that hosts the NLP model API. The API handles incoming text data, preprocesses it, performs sentiment analysis using the trained model, and returns the predicted classification.
 
 
 ## Authors
