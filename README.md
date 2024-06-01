@@ -28,6 +28,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 ### `node index`
 Runs the backend - run this command with cmd inside the backend folder in project.
 
+## Dependencies
+Before running the project, ensure you have the following dependencies installed. You can install them by running:
+`npm install`
+
 ### Running the NLP Model API
 To run the NLP model API, navigate to the `backend/model` folder in our project directory and run the following command:
 `python main.py`
