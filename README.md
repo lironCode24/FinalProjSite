@@ -6,9 +6,9 @@ This project aims to harness the power of Natural Language Processing (NLP) to i
 
 We use PostgreSQL as our database. In the `DB` folder of our GitHub repository, you will find two SQL files:
 
-1. create.sql:
+1. create.sql:\
     This file contains the SQL commands to create the necessary database tables.
-3. insert.sql:
+3. insert.sql:\
     This file contains the SQL commands to insert initial data into the database tables.
 
 Steps to Setup the Database:
@@ -23,7 +23,7 @@ Steps to Setup the Database:
 
 In the project directory, you can run:
 ### `npm start`
-Runs the app in the development mode.\
+Runs the app.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
@@ -33,7 +33,7 @@ Runs the backend - run this command with cmd inside the backend folder in projec
 ### Running the NLP Model API
 To run the NLP model API, navigate to the `backend/model` folder in our project directory and run the following command:
 `python main.py`
-This command starts the Flask server that hosts the NLP model API. The API handles incoming text data, preprocesses it, performs sentiment analysis using the trained model, and returns the predicted classification.
+This command starts the Flask server that hosts the NLP model API.\ The API handles incoming text data, preprocesses it, performs sentiment analysis using the trained model, and returns the predicted classification.
 
 
 ## Authors
