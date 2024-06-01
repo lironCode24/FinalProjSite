@@ -6,9 +6,10 @@ This project aims to harness the power of Natural Language Processing (NLP) to i
 
 We use PostgreSQL as our database. In the DB folder of our GitHub repository, you will find two SQL files:
 
-create.sql: This file contains the SQL commands to create the necessary database tables.
-
-insert.sql: This file contains the SQL commands to insert initial data into the database tables.
+1. create.sql:
+    This file contains the SQL commands to create the necessary database tables.
+3. insert.sql:
+    This file contains the SQL commands to insert initial data into the database tables.
 
 Steps to Setup the Database:
 
