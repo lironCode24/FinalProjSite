@@ -119,8 +119,6 @@ const createUser = async (body) => {
     }
 };
 
-
-
 // Function to generate a random access token
 const generateAccessToken = () => {
     // Generate a random buffer of 32 bytes
@@ -171,7 +169,6 @@ const loginUser = async (username, password, res) => {
 
 const deleteUserToken = async (accessToken, res) => {
     try {
-
         // Update the access token in the database to an empty string
         await pool.query('UPDATE users SET AccessToken = $1 WHERE AccessToken = $2', ["", accessToken]);
 
@@ -208,11 +205,9 @@ const getUserProfile = async (accessToken, res) => {
     }
 };
 
-
 const insertTextData = async (rawText, accessToken) => {
     try {
         const resultForId = await pool.query('SELECT * FROM users WHERE AccessToken = $1', [accessToken]);
-        console.log(resultForId.rows[0]);
         const userID = resultForId.rows[0].userid;
         const query = 'INSERT INTO TextData (RawText, UserID) VALUES ($1, $2) RETURNING TextID';
         const values = [rawText, userID];
@@ -223,23 +218,6 @@ const insertTextData = async (rawText, accessToken) => {
         throw new Error('Error inserting text data');
     }
 };
-
-const getRoleById = async (roleId) => {
-    try {
-        const query = 'SELECT rolename FROM userrole WHERE roleid = $1';
-        const result = await pool.query(query, [roleId]);
-
-        if (result.rows.length > 0) {
-            return result.rows[0].rolename;
-        } else {
-            throw new Error('Role not found');
-        }
-    } catch (error) {
-        console.error('Error fetching role:', error);
-        throw new Error('Error fetching role');
-    }
-};
-
 
 const insertPredictionData = async (textID, predictionResult) => {
     try {
@@ -259,10 +237,24 @@ const insertPredictionData = async (textID, predictionResult) => {
     }
 };
 
+const getRoleById = async (roleId) => {
+    try {
+        const query = 'SELECT rolename FROM userrole WHERE roleid = $1';
+        const result = await pool.query(query, [roleId]);
+
+        if (result.rows.length > 0) {
+            return result.rows[0].rolename;
+        } else {
+            throw new Error('Role not found');
+        }
+    } catch (error) {
+        console.error('Error fetching role:', error);
+        throw new Error('Error fetching role');
+    }
+};
 
 const updateProfileImage = async (imageUrl, accessToken, res) => {
     try {
-
         // Update the access token in the database to an empty string
         const result = await pool.query('UPDATE users SET profileimg = $1 WHERE AccessToken = $2', [imageUrl, accessToken]);
         return `Update image : ${JSON.stringify(result.rows[0])}`;
@@ -282,7 +274,6 @@ const getAllUsersToApprove = async (res) => {
         res.status(500).json({ error: 'Internal server error' });
     }
 };
-
 
 const approveUser = async (req, res) => {
     try {
