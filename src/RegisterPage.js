@@ -89,7 +89,7 @@ const RegisterPage = () => {
             }
 
 
-            // Validate username format (optional)
+            // Validate username format 
             const usernameRegex = /^[a-zA-Z0-9_]{4,16}$/; // Example regex for username (alphanumeric and underscores, 4-16 characters)
             if (!usernameRegex.test(formData.username)) {
                 setError('Invalid username format');
@@ -98,7 +98,7 @@ const RegisterPage = () => {
             }
 
             // Validate email format
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Example regex for email format
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regex for email format
             if (!emailRegex.test(formData.email)) {
                 setError('Invalid email format');
                 setSuccessMessage('');
@@ -106,7 +106,7 @@ const RegisterPage = () => {
             }
 
             // Validate email format
-            const passRegex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/; // Example regex for email format
+            const passRegex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/; // Regex for password format
             if (!passRegex.test(formData.password)) {
                 setError('Invalid password format');
                 setSuccessMessage('');
