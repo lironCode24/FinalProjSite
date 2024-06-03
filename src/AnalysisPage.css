@@ -106,6 +106,9 @@
     width: 40%;
     text-align: center;
     box-sizing: border-box;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(0, 0); /* Offset to center properly */
 }
 
 

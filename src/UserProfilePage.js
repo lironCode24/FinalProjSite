@@ -151,6 +151,8 @@ const UserProfilePage = () => {
                 <div className="user-detail-card"><strong>Full Name:</strong> {userProfile.fullname}</div>
                 <div className="user-detail-card"><strong>Email:</strong> {userProfile.email}</div>
                 <div className="user-detail-card"><strong>Role:</strong> {roleName}</div>
+                <Link to="/analysis" className="back-to-analyze-btn">Back to Analyze</Link>
+
             </div>
 
             {/* Profile Image Selection Modal */}
@@ -176,7 +178,6 @@ const UserProfilePage = () => {
                 </div>
             )}
 
-            <Link to="/analysis" className="back-to-analyze-btn">Back to Analyze</Link>
         </div>
     );
 };

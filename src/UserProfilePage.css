@@ -73,10 +73,10 @@ body {
     align-items: center;
 }
 
-    .change-image-button svg {
-        width: 15px; /* Adjust the size of the icon */
-        height: 19px;
-    }
+.change-image-button svg {
+    width: 15px; /* Adjust the size of the icon */
+    height: 19px;
+}
 
 
 .change-image-button:hover {
@@ -117,9 +117,9 @@ body {
     margin-top: 30px;
 }
 
-    .back-to-analyze-btn:hover {
-        background-color: #E88FA7; /* Darker rose color on hover for feedback */
-    }
+.back-to-analyze-btn:hover {
+    background-color: #E88FA7; /* Darker rose color on hover for feedback */
+}
 
 /* Define styles for the modal container */
 .image-selection-modal {
@@ -161,9 +161,9 @@ body {
     transition: transform 0.2s ease; /* Add a smooth transition effect */
 }
 
-    .profile-option-image:hover {
-        transform: scale(1.1); /* Enlarge the image on hover for feedback */
-    }
+.profile-option-image:hover {
+    transform: scale(1.1); /* Enlarge the image on hover for feedback */
+}
 
 /* Style the close button within the modal */
 .close-modal-button {

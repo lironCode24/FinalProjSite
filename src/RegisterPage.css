@@ -44,6 +44,12 @@ body {
 .error-message,
 .success-message {
     margin-bottom: 10px;
+    width: 40%;
+    text-align: center;
+    box-sizing: border-box;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(75%, 0); /* Offset to center properly */
 }
 
 .error-message {
@@ -54,9 +60,6 @@ body {
     background-color: #ffeeee;
     border: 1px solid #ffcccc;
     border-radius: 8px;
-    width: 40%;
-    text-align: center;
-    box-sizing: border-box;
 }
 
 .success-message {

@@ -4,16 +4,7 @@ import './RegisterPage.css'; // Import CSS file for styling
 import logo from './images/logo-haifa.jpg'; // Import the image file with the correct path
 
 const RegisterPage = () => {
-    const [merchants, setMerchants] = useState(false);
-    function getMerchant() {
-        fetch('http://localhost:3001')
-            .then(response => {
-                return response.text();
-            })
-            .then(data => {
-                setMerchants(data);
-            });
-    }
+    
     function createUser(username, fullname, email, role, password) {
         return fetch('http://localhost:3001/createUser', {
             method: 'POST',
