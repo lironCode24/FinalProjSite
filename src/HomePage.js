@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faComment } from '@fortawesome/free-solid-svg-icons'; // Import the icons you want to use
 import './HomePage.css'; // Import the CSS file for styling
-import { faDoorOpen, faHandHoldingHeart } from '../node_modules/@fortawesome/free-solid-svg-icons/index';
+import { faHandHoldingHeart } from '../node_modules/@fortawesome/free-solid-svg-icons/index';
 
 const HomePage = () => {
     return (

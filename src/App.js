@@ -68,6 +68,8 @@ const App = () => {
             <div className="container">
                 <Routes>
                     <Route path="/" element={<HomePage />} />
+                    <Route path="/about" element={<AboutPage />} />  {/* Accessible whether logged in or not */}
+
                     {isAdmin ? (
                         <Route path="/approveUsers" element={<ApprovePage />} />
                     ): (
@@ -78,14 +80,14 @@ const App = () => {
                         <>
                             <Route path="/analysis" element={<AnalysisPage />} />
                             <Route path="/profile" element={<UserProfilePage />} />
-                            <Route path="/about" element={<AboutPage />} />  {/* Accessible whether logged in or not */}
                             <Route path="/login" element={<Navigate to="/analysis" />} />
+                            <Route path="/register" element={<Navigate to="/analysis" />} />
+
                         </>
                     ) : (
                         <>
                             <Route path="/login" element={<LoginPage />} />
                             <Route path="/register" element={<RegisterPage />} />
-                            <Route path="/about" element={<AboutPage />} />  {/* Accessible whether logged in or not */}
                             <Route path="/analysis" element={<Navigate to="/login" />} />
                             <Route path="/profile" element={<Navigate to="/login" />} />
                         </>

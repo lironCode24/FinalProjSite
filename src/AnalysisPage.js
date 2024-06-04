@@ -123,7 +123,7 @@ const AnalysisPage = () => {
     };
 
     return (
-        <div className="main-container"> {/* Changed class name to main-container */}
+        <div className="main-container"> {}
             <div className="logo-container">
                 <img src={logo} alt="Logo" className="logo" />
             </div>
@@ -157,7 +157,7 @@ const AnalysisPage = () => {
                 <div className="result-container">
                     <p>{getCurrentDateTime()}</p>
                     <h2>Analysis Result</h2>
-                    <p >{analysisResult}</p> {/* Example of highlighting */}
+                    <p >{analysisResult}</p> {}
                 </div>
             )}
         </div>
