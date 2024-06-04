@@ -96,7 +96,7 @@ const RegisterPage = () => {
                 return false;
             }
 
-            // Validate email format
+            // Validate password format
             const passRegex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/; // Regex for password format
             if (!passRegex.test(formData.password)) {
                 setError('Invalid password format');
